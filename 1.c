@@ -1,20 +1,18 @@
 #include <stdio.h>
 
-int main() 
+int main(int argc, char const *argv[])
 {
-	int a = 0;
-	int b = 0;
-	int a1 = 0;
-	int b1 = 0;
+    const int size = 10;
+    char ch[size];
 
-	scanf("%i", &a);
-	scanf("%i", &b);
+    scanf("%s", &ch);
 
-	a1 = b;
-	b1 = a;
+    for (int i = 1; i < size; i += 2) {
+        if (ch[i] >= 'a' && ch[i] <= 'z') {
+            ch[i] -= 32;
+        }
+    }
 
-	printf("%i \n", a1);
-	printf("%i \n", b1);
-
-	return 0;
+    printf("%s", ch);
+    return 0;
 }
